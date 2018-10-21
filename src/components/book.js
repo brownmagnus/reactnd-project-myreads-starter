@@ -2,15 +2,19 @@ import React, { Component } from 'react'
 
 
 class book extends Component {
+  componentDidMount() {
+    console.log()
+  }
+
   render() {
     return (
       <div>
         <li>
           <div className="book">
             <div className="book-top">
-              <div className="book-cover" style={{ width: 128, height: 192, backgroundImage: 'url("http://books.google.com/books/content?id=pD6arNyKyi8C&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE70Rw0CCwNZh0SsYpQTkMbvz23npqWeUoJvVbi_gXla2m2ie_ReMWPl0xoU8Quy9fk0Zhb3szmwe8cTe4k7DAbfQ45FEzr9T7Lk0XhVpEPBvwUAztOBJ6Y0QPZylo4VbB7K5iRSk&source=gbs_api")' }}></div>
+              <div className="book-cover" style={{ width: 128, height: 192, backgroundImage: `url("${this.props.book.imageLinks && this.props.book.imageLinks.thumbnail || ""}")` }}></div>
               <div className="book-shelf-changer">
-                <select>
+                <select value={this.props.book.shelf || "none"}>
                   <option value="move" disabled>Move to...</option>
                   <option value="currentlyReading">Currently Reading</option>
                   <option value="wantToRead">Want to Read</option>
@@ -19,8 +23,8 @@ class book extends Component {
                 </select>
               </div>
             </div>
-            <div className="book-title">The Hobbit</div>
-            <div className="book-authors">J.R.R. Tolkien</div>
+            <div className="book-title">{this.props.book.title}</div>
+            <div className="book-authors">{this.props.book.authors[0] || "No author"}</div>
           </div>
         </li>
 

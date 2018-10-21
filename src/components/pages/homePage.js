@@ -7,14 +7,13 @@ import Shelf from '../shelf'
 class homePage extends Component {
   constructor(props) {
     super(props);
-    this.state ={
+    this.state = {
       books: []
     }
   }
   componentDidMount() {
     BooksAPI.getAll()
     .then(resp => {
-      console.log(resp);
       this.setState({ books: resp})
     });
   }
@@ -28,7 +27,9 @@ class homePage extends Component {
         </div>
         <div className="list-books-content">
           <div>
-            <Shelf/>
+            <Shelf name="Currently Reading" books={this.state.books.filter(f => f.shelf ==="currentlyReading")}/>
+            <Shelf name="Want To Read" books={this.state.books.filter(f => f.shelf ==="wantToRead")}/>
+            <Shelf name="Read" books={this.state.books.filter(f => f.shelf ==="read")}/>
           </div>
         </div>
         <div className="open-search">
