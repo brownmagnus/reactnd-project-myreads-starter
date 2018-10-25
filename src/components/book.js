@@ -2,21 +2,17 @@ import React, { Component } from 'react'
 
 
 class book extends Component {
-  componentDidMount() {
-    console.log()
-  }
-
   render() {
     return (
       <div>
         <li>
           <div className="book">
             <div className="book-top">
-              <div className="book-cover" 
+              <div className="book-cover"
               style={{
                 width: 128,
                 height: 192,
-                backgroundImage: `url("${this.props.book.imageLinks.thumbnail || "" }")` }}>
+                backgroundImage: `url("${this.props.book.imageLinks && this.props.book.imageLinks.thumbnail || "" }")` }}>
               </div>
               <div className="book-shelf-changer">
                 <select value={this.props.book.shelf || "none"} onChange={(e) => {this.props.updateBook(this.props.book, e.target.value) }}>
@@ -29,7 +25,7 @@ class book extends Component {
               </div>
             </div>
             <div className="book-title">{this.props.book.title}</div>
-            <div className="book-authors">{this.props.book.authors[0] || "No author"}</div>
+            <div className="book-authors">{ this.props.book.authors || "No author"}</div>
           </div>
         </li>
 

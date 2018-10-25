@@ -4,9 +4,6 @@ import React, { Component } from 'react'
 import Book from './book'
 
 class shelf extends Component {
-  componentDidMount() {
-  }
-
   render() {
     return (
       <div className="bookshelf">
