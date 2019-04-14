@@ -1,6 +1,6 @@
 # MyReads Project
 
-This is the final assessment project for Udacity's React Fundamentals course. I was provided a template to save you time by providing a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. In which I choose to start with the template and added interactivity to the app by refactoring the static code in the template.
+This is the final assessment project for Udacity's React Fundamentals course. I was provided a template, to save me some time, of a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. In which I choose to start with the template and added interactivity to the app by refactoring the static code in the template.
 
 ## TL;DR
 
